@@ -26,7 +26,7 @@ while True:
             if x > 780:
                 x = 780
                 state = 1
-            # 원운동 시작 조건 (위치 맞춤 없음)
+            # 원운동 시작 조건 (아래 모서리 도착 시)
             if x == 400 and y == 90:
                 mode = 1
                 deg = 0
@@ -68,6 +68,7 @@ while True:
 
         if dist < 5:
             state = (state + 1) % 3
+            # 삼각형 한 바퀴 다 돌았으면 다시 사각으로 전환
             if state == 0:
                 mode = 0
         else:
