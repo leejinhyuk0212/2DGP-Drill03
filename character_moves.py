@@ -51,11 +51,12 @@ while True:
     elif mode == 1:
         x = 400 + 210 * math.cos(math.radians(deg) - math.pi/2)
         y = 300 + 210 * math.sin(math.radians(deg) - math.pi/2)
-        deg += 1
-        if deg > 360:
+        deg -= 1
+        if deg < -360:
             deg = 0
             mode = 0
             # 초기 위치도 그대로 둠
+            # 원운동 반대로
             state = 0
 
     delay(0.01)
